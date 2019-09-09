@@ -1,0 +1,2 @@
+# RustCalculator
+Calculates raid costs
