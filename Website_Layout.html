@@ -13,23 +13,26 @@
 <img src="C:\Users\Taylor\Desktop\img\door.hinged.metal.png" alt="Rust Metal Door">
 
 <form id="metal1" action="/action_page.php">
-    Metal Doors: <input type="number" name ="MetalDoors" value="0"><br><br>
+    Metal Doors: <input type="number" id="MetalDoors" value="0"><br>
+    Metal Walls: <input type="number" name = "MetalWalls" value="0"><br>
 </form>
 
 <button onclick="myFunction()">Check Cost</button><br><br><br>
-<p id="demo"></p>
+<span id="result"></span> sulfur to complete this raid.
 
 <script>
-function myFunction() {
-    var x = document.getElementById("metal1");
-    var number= ""
-    var i;
-    for (i=0; i<x.length;i++){
-        number += x.elements[i].value + "<br>";
-    }
-    document.getElementById("demo").innerHTML = number;
+function myFunction()
+{
+        num1 = document.getElementById("MetalDoors").value;
+        document.getElementById("result").innerHTML = num1 * 3150;
 }
 </script>
+
+
+
+
+
+
 </div>
     <div class="col-sm-4">
       <h3>Column 2</h3>
