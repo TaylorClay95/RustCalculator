@@ -10,39 +10,85 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
+      <style>
+        /* Style The Dropdown Button */
+        .dropbtn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        /* Links inside the dropdown */
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+          background-color: #3e8e41;
+        }
+        </style>
+        
+        <div class="dropdown">
+          <button class="dropbtn">Dropdown</button>
+          <div class="dropdown-content">
+            <a href="#">Explosive Ammo</a>
+            <a href="#">Rockets</a>
+            <a href="#">Satchel Charges</a>
+            <a href="#">Timed Explosive</a>
+            <a href="#">Beancan Grenades</a>
+            <a href="#">HE Grenades</a>
+          </div>
+        </div>
 <img src="C:\Users\Taylor\Desktop\img\door.hinged.metal.png" alt="Rust Metal Door">
-
-<form id="Defense" action="/action_page.php">
-    Metal Doors: <input type="number" id="MetalDoors" value="0"><br>
-    Garage Doors:<input type="number" id="GarageDoors" value="0"><br>
-    Stone Walls: <input type="number" id="StoneWalls" value="0"><br>
-    Metal Walls: <input type="number" name = "MetalWalls" value="0"><br>
+<form>
+  Metal door:<br>
+  <input id="num1" type="number" name="num1">
+  <br> Garage door:<br>
+  <input id="num2" type="number" name="num2">
+  <br><br>
+  <input type="button" value="Check Cost" onclick="doMath()" />
+  <div id="finSum"></div>
 </form>
-<button onclick="metalDoorSulfurCost()">Add M</button><br>
-<button onclick="GarageDoorSulfurCost()">Add G</button><br>
-
-<button onclick="TotalSulfurCost()">Check Cost</button><br><br><br>
-<p>The amount of sulfur you'll need initially is:</p>
-<span id="result1"></span>
-<span id="result2"></span>
-<span id="totalResult"></span>
-
 <script>
-function metalDoorSulfurCost(){
-        num1 = document.getElementById("MetalDoors").value;
-        document.getElementById("result1").innerHTML = num1 * 3150;
-}
-function GarageDoorSulfurCost(){
-        num1 = document.getElementById("GarageDoors").value;
-        document.getElementById("result2").innerHTML = num1 * 5000;
-}
-function TotalSulfurCost(){
-      num1 = document.getElementById("result1").innerHTML;
-      num2 = document.getElementById("result2").innerHTML;
-      var x = num1 + num2;
-      document.getElementById("totalResult").innerHTML = num3;
+function doMath(){
+      var metalDoor = document.getElementById("num1").value * 3150.00;
+      var garageDoor = document.getElementById("num2").value * 5000.00;
+      var totalSulf = metalDoor + garageDoor;
+      document.getElementById('finSum').innerHTML = 'The amount of sulfur you will need is:' + totalSulf;  
 }
 </script>
+
 </div>
     <div class="col-sm-4">
       <h3>Column 2</h3>
