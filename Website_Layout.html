@@ -17,10 +17,9 @@
         <option value="timedExplosive">Timed Explosive</option>
         <option value="satchelCharge">Satchel Charges</option>
       </select>
+    </div><br>
       <p id="explosive"></p>
-        </div>
 <body onload="explosiveType()"></body>
-<img src="C:\Users\Taylor\Desktop\img\door.hinged.metal.png" alt="Rust Metal Door">
 <form>
   Metal door:<br>
   <input id="num1" type="number" name="num1">
@@ -28,14 +27,48 @@
   <input id="num2" type="number" name="num2">
   <br><br>
   <input type="button" value="Check Cost" onclick="doMath()" />
-  <div id="finSum"></div>
+  <div id="finSumSulf"></div>
+  <div id="finSumChar"></div>
+  <div id="finSumFrags"></div>
 </form>
 <script>
 function doMath(){
-      var metalDoor = document.getElementById("num1").value * 3150.00;
-      var garageDoor = document.getElementById("num2").value * 5000.00;
+  var metalDoorSulfur;
+  var metalDoorCharcoal;
+  var metalDoorFrags;
+  var garageDoorSulfur;
+  var garageDoorCharcoal;
+  var garageDoorFrags;
+  if(document.getElementById("mySelect").value == "rockets"){
+    metalDoorSulfur = 0;
+    garageDoorSulfur = 0;
+    metalDoorCharcoal = 0;
+    garageDoorCharcoal = 0;
+    metalDoorFrags = 0;
+    garageDoorFrags = 0;
+  }
+  if(document.getElementById("mySelect").value == "explosiveAmmo"){
+    metalDoorSulfur = 1600;
+    garageDoorSulfur = 3750;
+    metalDoorCharcoal = 1920;
+    garageDoorCharcoal = 4500;
+    metalDoorFrags = 5;
+    garageDoorFrags = 6;
+  }
+ 
+      var metalDoor = document.getElementById("num1").value * metalDoorSulfur;
+      var garageDoor = document.getElementById("num2").value * garageDoorSulfur;
+      var metalDoorCh = document.getElementById("num1").value * metalDoorCharcoal;
+      var garageDoorCh = document.getElementById("num2").value * garageDoorCharcoal;
+      var metalDoorFr = document.getElementById("num1").value * metalDoorFrags;
+      var garageDoorFr = document.getElementById("num2").value * garageDoorFrags;
       var totalSulf = metalDoor + garageDoor;
-      document.getElementById('finSum').innerHTML = 'The amount of sulfur you will need is:' + totalSulf;  
+      var totalCharcoal = metalDoorCh + garageDoorCh;
+      var totalMetal = metalDoorFr + garageDoorFr;
+      document.getElementById('finSumSulf').innerHTML = 'The amount of sulfur you will need is: ' + totalSulf;
+      document.getElementById('finSumChar').innerHTML = 'The amount of charcoal you will need is: ' + totalCharcoal;
+      document.getElementById('finSumFrags').innerHTML = 'The amount of metal you will need is: ' + totalMetal;
+
 }
 </script>
 <script>
