@@ -10,17 +10,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-        <div class="dropdown">
-          <button class="dropbtn">Dropdown</button>
-          <div class="dropdown-content">
-            <a href="#">Explosive Ammo</a>
-            <a href="#">Rockets</a>
-            <a href="#">Satchel Charges</a>
-            <a href="#">Timed Explosive</a>
-            <a href="#">Beancan Grenades</a>
-            <a href="#">HE Grenades</a>
-          </div>
+      <select id="mySelect" onchange="explosiveType()">
+        <option value="What explosive type will you use?"></option>
+        <option value="explosiveAmmo">Explosive Ammo</option>
+        <option value="rockets">Rockets</option>
+        <option value="timedExplosive">Timed Explosive</option>
+        <option value="satchelCharge">Satchel Charges</option>
+      </select>
+      <p id="explosive"></p>
         </div>
+<body onload="explosiveType()"></body>
 <img src="C:\Users\Taylor\Desktop\img\door.hinged.metal.png" alt="Rust Metal Door">
 <form>
   Metal door:<br>
@@ -39,7 +38,12 @@ function doMath(){
       document.getElementById('finSum').innerHTML = 'The amount of sulfur you will need is:' + totalSulf;  
 }
 </script>
-
+<script>
+function explosiveType(){
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("explosive").innerHTML = x;
+}
+</script>
 </div>
     <div class="col-sm-4">
       <h3>Column 2</h3>
